@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Quiz</h2>
+<div id="quiz"></div>
+<p id="score"></p>
+<script>
+const questions=[
+    {q:"Capital of India?",a:"Delhi"},
+    {q:"Father of Computer?",a:"Babbage"},
+    {q:"Pizza is from which country?",a:"Italy"},
+    {q:"2+2=?",a:"4"},
+    {q:"Python creator?",a:"Guido"}
+];
+let score=0;
+questions.forEach((q,i)=>{
+    let ans=prompt(q.q);
+    if(ans && ans.toLowerCase()===q.a.toLowerCase()){score++;}
+});
+document.getElementById("score").innerText=`Your score: ${score}/${questions.length}`;
+</script>
+</body>
+</html>

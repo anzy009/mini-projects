@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head><title>Tic Tac Toe</title>
+<style>
+table {margin:auto; border-collapse: collapse;}
+td {width:60px; height:60px; text-align:center; font-size:24px; border:1px solid #000;}
+</style>
+</head>
+<body>
+<h2 style="text-align:center;">Tic Tac Toe</h2>
+<table id="board">
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+</table>
+<script>
+let turn="X";
+const board=document.getElementById("board");
+board.addEventListener("click", e=>{
+    if(e.target.tagName==="TD" && e.target.textContent===""){
+        e.target.textContent=turn;
+        turn = turn==="X"?"O":"X";
+    }
+});
+</script>
+</body>
+</html>

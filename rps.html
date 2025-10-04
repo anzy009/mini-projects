@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Rock-Paper-Scissors</h2>
+<button onclick="play('rock')">Rock</button>
+<button onclick="play('paper')">Paper</button>
+<button onclick="play('scissors')">Scissors</button>
+<p id="result"></p>
+<script>
+function play(player){
+    const choices=["rock","paper","scissors"];
+    const comp=choices[Math.floor(Math.random()*3)];
+    let res="";
+    if(player===comp) res="Draw!";
+    else if((player==="rock"&&comp==="scissors")||(player==="paper"&&comp==="rock")||(player==="scissors"&&comp==="paper")) res="You Win!";
+    else res="You Lose!";
+    document.getElementById("result").innerText=`You: ${player}, Computer: ${comp}. ${res}`;
+}
+</script>
+</body>
+</html>
